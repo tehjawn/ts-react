@@ -49,11 +49,13 @@ people.push(new Person(
   21,
   1
 ))
+
 people.push({
   age: 22,
   name: "Sup",
   id: 2
 })
+
 people.push({
   name: "Doge",
   age: 17,

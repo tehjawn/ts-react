@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "npm install -g webpack && npm install --save react react-dom @types/react @types/react-dom && npm install --save-dev typescript awesome-typescript-loader source-map-loader && webpack"
+    "start": "npm install -g webpack webpack-dev-server && npm install --save react react-dom @types/react @types/react-dom && npm install --save-dev typescript awesome-typescript-loader source-map-loader && webpack",
+    "dev": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,13 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.1.2",
+    "css-loader": "^0.28.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
     "source-map-loader": "^0.2.1",
-    "typescript": "^2.2.2"
+    "style-loader": "^0.16.1",
+    "typescript": "^2.2.2",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
   }
 }
