@@ -1,4 +1,7 @@
 var path = require('path')
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// var HtmlWebpackPlugin = require('html-webpack-plugin');
+// var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -24,7 +27,7 @@ module.exports = {
   module: {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, use: "awesome-typescript-loader" },
+      { test: /\.tsx?$/, use: ['awesome-typescript-loader'] },
 
       {test: /\.scss$/, use:['style-loader','css-loader', 'sass-loader']},
 
@@ -41,4 +44,13 @@ module.exports = {
     "react": "React",
     "react-dom": "ReactDOM"
   },
+
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     minify: {
+  //       collapseWhitespace: true
+  //     }
+  //   }),
+  //   new UglifyJSPlugin()
+  // ]
 };

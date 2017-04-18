@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/dist/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 4);
@@ -220,7 +220,7 @@ exports = module.exports = __webpack_require__(8)(undefined);
 
 
 // module
-exports.push([module.i, "html, body {\n  background-color: pink; }\n  html p, body p {\n    color: white; }\n", ""]);
+exports.push([module.i, "html, body {\n  background-color: pink; }\n  html ol, body ol {\n    color: black; }\n", ""]);
 
 // exports
 
