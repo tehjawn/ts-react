@@ -35,54 +35,93 @@ let notSure: any = 4;
 notSure = "string"
 notSure = false
 
-class Person {
-	constructor(
-		public name: string, 
-		public age: number, 
-		public id: number
-	) {}
+// class Person {
+// 	constructor(
+// 		public name: string, 
+// 		public age: number, 
+// 		public id: number
+// 	) {}
+// }
+
+interface PersonInfo {
+  name: string
+  age: number
+  id: number
 }
 
-let people: Array<Person> = []
-people.push(new Person(
-  "John",
-  21,
-  1
-))
+class PersonFactory {
+  peopleList:Array<Person> = []
 
-people.push({
-  age: 22,
-  name: "Sup",
-  id: 2
-})
+  constructor(){}
 
-people.push({
-  name: "Doge",
-  age: 17,
-  id: 3
-})
+  generatePerson(personInfo:PersonInfo){
+    let newPerson = new Person(personInfo)
+    this.peopleList.push(newPerson)
+    return newPerson
+  }
+}
+
+class Person {
+  _name: string
+  _age: number
+  _id: number
+
+  constructor({ name, age, id }:PersonInfo) {
+    this._name = name
+    this._age = age
+    this._id = id
+  }
+  
+  get name() { return this._name }
+}
+
+let PF = new PersonFactory()
+let John = PF.generatePerson({ name: 'John', age: 21, id: 1 })
+
+console.log(John)
+
+// let people: Array<Person> = []
+// people.push(new Person(
+//   "John",
+//   21,
+//   1
+// ))
+
+// people.push({
+//   age: 22,
+//   name: "Sup",
+//   id: 2
+// })
+
+// people.push({
+//   name: "Doge",
+//   age: 17,
+//   id: 3
+// })
+
+// console.log(people)
 
 // Class : Hello --> Returns Hello H1 with HelloProps
 export 
 class Hello extends React.Component<HelloProps, undefined> {
   render() {
-  	let peopleNames: any[] = people.filter(person => {
-			return person.age >= 21
-		}).map(person => {
-			return <li key={person.id}>Hello {person.name}!</li>
-		})
+  	// let peopleNames: any[] = people.filter(person => {
+		// 	return person.age >= 21
+		// }).map(person => {
+		// 	return <li key={person.id}>Hello {person.name}!</li>
+		// })
 
-		let peopleAges: number = people.map(person => {
-      return person.age
-    }).reduce((arr, val) => {
-      return arr + val
-    }, 0)
+		// let peopleAges: number = people.map(person => {
+    //   return person.age
+    // }).reduce((arr, val) => {
+    //   return arr + val
+    // }, 0)
 
     return (
       <div>
-        {peopleAges}
+        {/*{peopleAges}*/}
         <ol>
-          {peopleNames}
+          {/*{peopleNames}*/}test
         </ol>
       </div>
   	);
